@@ -4,8 +4,10 @@ import { EthosConnectStatus, SignInButton, ethos } from 'ethos-connect';
 import { FC, useState } from 'react';
 
 const navigation = [
-    { name: 'Mint', href: '/' },
-    { name: 'My Squad', href: '/my-squad' },
+    { name: 'Spot', href: '/' },
+    { name: 'Bridge', href: '/' },
+    { name: 'Derivatives', href: '/' },
+    { name: 'Rewards', href: '/' },
 ];
 
 const Header: FC = () => {
@@ -14,21 +16,21 @@ const Header: FC = () => {
 
     return (
         <header className="absolute inset-x-0 top-0 z-50">
-            <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+            <nav className="flex max-w-screen items-center justify-between lg:mx-4 p-6" aria-label="Global">
                 <div className="flex lg:flex-1">
                     <a href="#" className="-m-1.5 p-1.5 flex flex-row items-center gap-3">
                         <span className="sr-only">Ethos Squad</span>
                         <img
                             className="h-12 w-auto"
-                            src="/mimi-card-stack.png"
+                            src="/iguazu_logo.png"
                             alt=""
                         />
                         <span className='flex gap-1'>
-                            <h1 className="text-xl font-light tracking-tight text-gray-900 sm:text-2xl">
-                                Ethos
+                            <h1 className="text-xl font-light tracking-tight text-yellow-100 sm:text-2xl">
+                            Project 
                             </h1>
-                            <h1 className="text-xl font-bold tracking-tight text-gray-900 sm:text-2xl">
-                                Squad
+                            <h1 className="text-xl font-bold tracking-tight text-yellow-100 sm:text-2xl">
+                            Iguazu
                             </h1>
                         </span>
                     </a>
@@ -45,12 +47,12 @@ const Header: FC = () => {
                 </div>
                 <div className="hidden lg:flex lg:gap-x-12">
                     {navigation.map((item) => (
-                        <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-gray-900">
+                        <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-yellow-100">
                             {item.name}
                         </a>
                     ))}
                 </div>
-                <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+                <div className="hidden lg:block rounded-md ml-12 bg-yellow-100 px-4 py-1.5 text-sm font-semibold text-black shadow-sm hover:bg-yellow-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-300 transition duration-700 ease-in-out">
                     {status === EthosConnectStatus.Connected ? <ethos.components.AddressWidget /> : <SignInButton />}
                 </div>
             </nav>
@@ -83,7 +85,7 @@ const Header: FC = () => {
                                     <a
                                         key={item.name}
                                         href={item.href}
-                                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                                        className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-yellow-100 hover:bg-gray-50"
                                     >
                                         {item.name}
                                     </a>
